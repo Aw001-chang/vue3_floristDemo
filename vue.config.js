@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: '/vue3_floristDemo/dist/#/user/home/'
+  publicPath: '/vue3_floristDemo/dist/user/home/'
 }
