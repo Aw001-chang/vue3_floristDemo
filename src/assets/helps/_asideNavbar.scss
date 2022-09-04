@@ -1,0 +1,119 @@
+@media(min-width: 992px){
+  .navbar-vertical{
+    width: 15rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1030;
+    transition: transform .3s;
+    overflow-x: auto;
+    padding: 0;
+  }
+  .navbar-expand-lg{
+    // flex-direction: column;
+    // flex-wrap: nowrap;
+    // justify-content: flex-start;
+    .container-fluid{
+      align-items: stretch;
+      justify-content: flex-start;
+      flex-direction: column;
+      .navbar-brand{
+        display: inline-flex;
+        justify-content: center;
+      }
+      .navbar-collapse{
+        width: auto;
+        flex-direction: column;
+        align-items: stretch;
+        .navbar-nav{
+          flex-direction: column;
+          margin-left: calc(-1 * var(--tblr-gutter-x, 1.5rem));
+          margin-right: calc(-1 * var(--tblr-gutter-x, 1.5rem));
+          .nav-item{
+            .nav-link{
+              padding: .5rem 1.5rem;
+              justify-content: flex-start;
+            }
+            .dropdown-toggle {
+              &:after {
+                margin-left: auto;
+              }
+            }
+            .dropdown-menu {
+              padding: 0;
+              background: 0 0;
+              position: static;
+              color: inherit;
+              box-shadow: none;
+              border: none;
+              min-width: 0;
+              z-index: 1030;
+              .dropdown-item{
+                padding-left: 3.25rem;
+                color: inherit;
+                &:hover{
+                  background-color: rgba(2, 0, 0, 0.445);
+                }
+              }
+              .active{
+                background-color: rgba(0, 0, 0, 0.32);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .dropdown{
+    position: relative;
+  }
+  
+  .dropdown-menu-columns{
+    flex-direction: column;
+  }
+}
+@media(max-width:991.98px){
+  .navbar-expand-lg {
+    .container-fluid {
+      .navbar-collapse {
+        .navbar-nav {
+          .nav-item {
+            .nav-link {
+              padding: .5rem 1.5rem;
+              justify-content: flex-start;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.navbar{
+  align-items: stretch;
+}
+.navbar-brand{
+  padding: .75rem 0;
+  margin: 0;
+}
+.navbar-dark{
+  background-color: #1e293b;
+  color:rgba(255, 255, 255, .7);
+}
+.dropdown-menu .show{
+  display: block;
+}
+.dropdown-menu-columns {
+  display: flex;
+  flex-direction: column ;
+}
+.nav-link{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  transition: color .3s;
+}
+.nav-link-icon {
+  margin-right: 0.25rem;
+}
