@@ -1,5 +1,3 @@
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production'
-    ? '/vue3_floristDemo/dist/'
-    : '/'
+  publicPath: '/vue3_floristDemo/dist/'
 }
