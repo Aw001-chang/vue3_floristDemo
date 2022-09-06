@@ -10,7 +10,16 @@
                 <img class="logo me-2" src="../../public/florist_logo.png" alt="">
                 <h1>桂子飄香</h1>
               </router-link>
-              <div class="nav-item dropdown ms-auto order-sm-1">
+              <div class="nav-item dropdown ms-auto order-sm-1 d-flex">
+                <router-link to="/user/favorite" class="nav-link d-flex text-white pe-2 pe-sm-0">
+                  <div class="position-relative me-2">
+                    <i class="bi bi-bookmark me-1"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    {{filterFavoriteLen.length}}
+                    </span>
+                  </div>
+                  <div class="d-sm-block d-none">我的收藏</div>
+                </router-link>
                 <a class="nav-link d-flex text-white pe-2 pe-sm-0" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   <div class="position-relative me-2">
                     <i class="bi bi-cart3 me-1"></i>
@@ -106,15 +115,15 @@
                     </router-link>
                   </li>
                   <li class="nav-item">
-                    <router-link to="/user/favorite" class="nav-link d-flex px-3 active">
+                    <!-- <router-link to="/user/favorite" class="nav-link d-flex px-3 active">
                       <div class="position-relative me-3">
                         <i class="bi bi-bookmark"></i>
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                         {{filterFavoriteLen.length}}
                         </span>
                       </div>
-                      <div>我的收藏</div>
-                    </router-link>
+                      <div class="d-sm-block d-none">我的收藏</div>
+                    </router-link> -->
                   </li>
                 </ul>
               </div>
@@ -160,6 +169,9 @@ export default {
         this.emitter.emit('deleteCartItem', this.cart)
         this.getCartProducts()
       })
+    },
+    toggleBtn () {
+      console.log('123')
     }
   },
   computed: {
