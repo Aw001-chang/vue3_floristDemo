@@ -90,7 +90,7 @@
                           </button>
                         </div>
                       </div>
-                      <div class="text-end px-md-3">
+                      <div class="text-end px-3">
                         <div class="fs-5 fw-bold">總計:&nbsp;NT$&nbsp;{{finalTotal}}</div>
                       </div>
                       <div class="text-center mt-4 mb-3 px-3">
@@ -113,17 +113,6 @@
                       </div>
                       <div>商品列表</div>
                     </router-link>
-                  </li>
-                  <li class="nav-item">
-                    <!-- <router-link to="/user/favorite" class="nav-link d-flex px-3 active">
-                      <div class="position-relative me-3">
-                        <i class="bi bi-bookmark"></i>
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                        {{filterFavoriteLen.length}}
-                        </span>
-                      </div>
-                      <div class="d-sm-block d-none">我的收藏</div>
-                    </router-link> -->
                   </li>
                 </ul>
               </div>
@@ -169,9 +158,6 @@ export default {
         this.emitter.emit('deleteCartItem', this.cart)
         this.getCartProducts()
       })
-    },
-    toggleBtn () {
-      console.log('123')
     }
   },
   computed: {
@@ -215,8 +201,8 @@ export default {
   .dropdown-menu{
     width: 360px;
     left:auto;
-    right:-118%;
-    top:50px !important;
+    right:-65%;
+    top:49px !important;
     transform: .3s ease-out;
     .overflow-scroll{
       height: 300px;
