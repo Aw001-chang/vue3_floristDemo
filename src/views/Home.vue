@@ -41,7 +41,7 @@
           <div class="col-lg-10 text-center text-brown">
             <div class="h1 mb-4">秋季花藝班</div>
             <p class="mb-5">學習基礎花藝所須之花卉知識，到花器選搭、基礎實作等課程，讓你能夠親手做出喜愛的花藝作品，增加生活的樂趣！</p>
-            <router-link @click="goToClass" to="/user/goods" class="btn btn-lg btn-outline-toffee">詳細資訊</router-link>
+            <router-link @click="goToClass" to="/goods" class="btn btn-lg btn-outline-toffee">詳細資訊</router-link>
           </div>
         </div>
       </div>
@@ -96,14 +96,14 @@
     </section>
     <section class="container-fluid coupon pt-7 pb-7 text-center">
       <div class="h1 mb-5 text-white">花藝陶器下午茶體驗</div>
-      <router-link to="/user/goods" class="btn btn-lg btn-outline-orange">詳細資訊</router-link>
+      <router-link to="/goods" class="btn btn-lg btn-outline-orange">詳細資訊</router-link>
     </section>
     <section class="container pt-7 pb-7">
       <div class="row justify-content-center">
         <div class="col-lg-10">
           <div class="d-flex justify-content-between align-items-center mb-5">
             <div class="h1 text-brown">最新商品</div>
-            <router-link to="/user/goods" class="btn btn-outline-toffee btn-sm">查看更多</router-link>
+            <router-link to="/goods" class="btn btn-outline-toffee btn-sm">查看更多</router-link>
           </div>
           <div class="goods row">
             <swiper

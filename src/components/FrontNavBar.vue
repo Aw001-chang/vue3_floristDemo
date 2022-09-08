@@ -6,12 +6,12 @@
         <div class="col-lg-10">
           <nav class="navbar navbar-expand-sm navbar-dark pt-2 pb-2">
             <div class="container-fluid px-0">
-              <router-link to="/user/home" class="navbar-brand d-flex align-items-center">
+              <router-link to="/" class="navbar-brand d-flex align-items-center">
                 <img class="logo me-2" src="../../public/florist_logo.png" alt="">
                 <h1>桂子飄香</h1>
               </router-link>
               <div class="nav-item dropdown ms-auto order-sm-1 d-flex">
-                <router-link to="/user/favorite" class="nav-link d-flex text-white pe-2 pe-sm-0">
+                <router-link to="/favorite" class="nav-link d-flex text-white pe-2 pe-sm-0">
                   <div class="position-relative me-2">
                     <i class="bi bi-bookmark me-1"></i>
                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
@@ -40,7 +40,7 @@
                       <span class="text-black-50">尚未選購商品</span>
                     </div>
                     <div class="text-center mt-4 mb-3 px-3">
-                      <router-link to="/user/goods" class="btn btn-toffee w-100 d-block">選購商品</router-link>
+                      <router-link to="/goods" class="btn btn-toffee w-100 d-block">選購商品</router-link>
                     </div>
                   </div>
                   <!-- 以下為 購物車已已選購商品 -->
@@ -94,8 +94,8 @@
                         <div class="fs-5 fw-bold">總計:&nbsp;NT$&nbsp;{{finalTotal}}</div>
                       </div>
                       <div class="text-center mt-4 mb-3 px-3">
-                        <router-link to="/user/cart"  class="btn btn-toffee w-100 d-block mb-3">前往結帳</router-link>
-                        <router-link to="/user/goods"  class="btn btn-outline-toffee w-100 d-block">繼續選購</router-link>
+                        <router-link to="/cart"  class="btn btn-toffee w-100 d-block mb-3">前往結帳</router-link>
+                        <router-link to="/goods"  class="btn btn-outline-toffee w-100 d-block">繼續選購</router-link>
                       </div>
                     </template>
                   </div>
@@ -107,7 +107,7 @@
               <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav ms-auto mt-sm-0 mt-3">
                   <li class="nav-item">
-                    <router-link to="/user/goods" class="nav-link d-flex px-3 active">
+                    <router-link to="/goods" class="nav-link d-flex px-3 active">
                       <div class="position-relative me-2">
                         <i class="bi bi-shop-window"></i>
                       </div>

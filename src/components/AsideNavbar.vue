@@ -12,7 +12,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <h1 class="navbar-brand navbar-brand-autodark">
-        <router-link to="/user/home" class="text-white">
+        <router-link to="/" class="text-white">
           <img src="../../public/florist_logo.png" class="logo me-2" alt="">桂子飄香
         </router-link>
       </h1>

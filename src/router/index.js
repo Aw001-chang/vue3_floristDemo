@@ -8,33 +8,11 @@ const routes = [
   //   component: Home
   // },
   {
-    path: '/login',
-    component: () => import('../views/Login.vue')
-  },
-  {
-    path: '/dashboard',
-    component: () => import('../views/Dashboard.vue'),
-    children: [
-      {
-        path: 'products',
-        component: () => import('../views/Products.vue')
-      },
-      {
-        path: 'orders',
-        component: () => import('../views/Orders.vue')
-      },
-      {
-        path: 'coupons',
-        component: () => import('../views/Coupons.vue')
-      }
-    ]
-  },
-  {
-    path: '/user',
+    path: '/',
     component: () => import('../views/UserBoard.vue'),
     children: [
       {
-        path: 'home',
+        path: '',
         name: 'Home',
         component: Home
       },
@@ -61,6 +39,28 @@ const routes = [
       {
         path: 'favorite',
         component: () => import('../views/Favorite.vue')
+      }
+    ]
+  },
+  {
+    path: '/login',
+    component: () => import('../views/Login.vue')
+  },
+  {
+    path: '/dashboard',
+    component: () => import('../views/Dashboard.vue'),
+    children: [
+      {
+        path: 'products',
+        component: () => import('../views/Products.vue')
+      },
+      {
+        path: 'orders',
+        component: () => import('../views/Orders.vue')
+      },
+      {
+        path: 'coupons',
+        component: () => import('../views/Coupons.vue')
       }
     ]
   }
