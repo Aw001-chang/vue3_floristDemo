@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="userboard">
     <FrontNavBar></FrontNavBar>
     <router-view></router-view>
     <ToastMessages></ToastMessages>
@@ -28,6 +28,13 @@ export default {
 </script>
 
 <style lang="scss">
+.userboard{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
   .goods{
     .card{
       .btn-sm{

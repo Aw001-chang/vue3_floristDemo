@@ -20,7 +20,9 @@ export default {
       },
       isLoading: false,
       recentWatched: JSON.parse(localStorage.getItem('recentWatched')) || [],
-      favorite: JSON.parse(localStorage.getItem('favorite')) || []
+      favorite: JSON.parse(localStorage.getItem('favorite')) || [],
+      favoriteId: JSON.parse(localStorage.getItem('favoriteId')) || [],
+      favoriteLens: ''
     }
   },
   methods: {
@@ -68,6 +70,7 @@ export default {
       this.$http.get(api).then((res) => {
         this.product = res.data.product
         this.product.qty = 1
+        // this.sortWatched(this.product)
         this.isLoading = false
         this.emitter.emit('productInfo', this.product)
       })
@@ -77,7 +80,7 @@ export default {
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart`
       const cart = {
         product_id: item.id,
-        qty: 1
+        qty: item.qty
       }
       this.$http.post(api, { data: cart }).then((res) => {
         this.isLoading = false
@@ -87,15 +90,6 @@ export default {
         })
         this.getCartProducts()
       })
-    },
-    addTofavorite (id) {
-      this.favorite.push(id)
-      localStorage.setItem('favorite', JSON.stringify(this.favorite))
-      this.emitter.emit('push-message', {
-        style: 'success',
-        title: '已成功加入收藏清單!'
-      })
-      this.emitter.emit('favorite', this.favorite)
     },
     updateCart (item) {
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart/${item.id}`
@@ -121,6 +115,27 @@ export default {
           this.$router.push(`checkout/${orderId}`)
         }
       })
+    },
+    toggleFavorite (product) {
+      const mach = this.favorite.findIndex((item) => item.id === product.id)
+      if (mach === -1) {
+        this.favorite.push(product)
+        this.favoriteId.push(product.id)
+        this.emitter.emit('push-message', {
+          style: 'success',
+          title: '已成功加入收藏清單!'
+        })
+      } else if (mach > -1) {
+        this.favorite.splice(mach, 1)
+        this.favoriteId.splice(mach, 1)
+        this.emitter.emit('push-message', {
+          style: 'success',
+          title: '已成功移除收藏清單!'
+        })
+      }
+      localStorage.setItem('favorite', JSON.stringify(this.favorite))
+      localStorage.setItem('favoriteId', JSON.stringify(this.favoriteId))
+      this.emitter.emit('favorite', this.favorite)
     }
   },
   mounted () {

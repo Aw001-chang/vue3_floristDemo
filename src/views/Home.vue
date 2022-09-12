@@ -1,10 +1,16 @@
 <template>
   <div class="home">
-    <img src="../assets/images/banner.jpg" class="w-100" alt="">
+    <section class="banner" ref="banner">
+      <div class="d-flex">
+        <div class="scrollit"></div>
+        <span class="text-brown fw-bold">scroll</span>
+      </div>
+      <img src="../assets/images/banner.jpg" class="w-100" alt="">
+    </section>
     <section class="pt-7 pb-7">
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-lg-10">
+          <div data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="bottom-bottom" class="col-lg-10">
             <div class="row">
               <div class="col-md-3 col-sm-6 text-center text-maroon mb-4 mb-sm-5 mb-md-0">
                 <div class="fs-1 mb-sm-4 mb-2">
@@ -50,7 +56,7 @@
       <div class="row justify-content-center">
         <div class="col-lg-10">
           <div class="row">
-            <div class="col-12 col-md-6">
+            <div data-aos="fade-right" data-aos-duration="1000" class="col-12 col-md-6">
               <div class="row">
                 <div class="col-12 mb-4">
                   <img src="../assets/images/index-service01.png" alt="">
@@ -63,7 +69,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-12 col-md-6">
+            <div data-aos="fade-left" data-aos-duration="1000" class="col-12 col-md-6">
               <div class="row">
                 <div class="col-12">
                   <div class="row">
@@ -96,7 +102,7 @@
     </section>
     <section class="container-fluid coupon pt-7 pb-7 text-center">
       <div class="h1 mb-5 text-white">花藝陶器下午茶體驗</div>
-      <router-link to="/goods" class="btn btn-lg btn-outline-orange">詳細資訊</router-link>
+      <router-link to="/goods" class="btn btn-lg btn-toffee">詳細資訊</router-link>
     </section>
     <section class="container pt-7 pb-7">
       <div class="row justify-content-center">
@@ -126,7 +132,10 @@
                 :key="item.id"
               >
                 <div class="card h-100 position-relative">
-                  <div class="btn-sm rounded-scircle btn-toffee position-absolute top-0 end-0 m-2" @click="addTofavorite(item.id)">
+                  <div
+                    class="btn-sm rounded-scircle btn-toffee position-absolute top-0 end-0 m-2"
+                    @click="toggleFavorite(item)"
+                    :class="{ 'opacity-100': favorite.includes(item)}">
                     <i class="bi bi-bookmark text-white"></i>
                   </div>
                   <a class="img-box" @click="getProductId(item.id)">
@@ -183,9 +192,53 @@ export default {
   body{
     background-color: #FEF9F5;
   }
+  .banner{
+    position: relative;
+    width: 100%;
+    height: 680px;
+    overflow: hidden;
+    .d-flex{
+      z-index: 100;
+      position: absolute;
+      bottom:0px;
+      left: 50%;
+      transform: translate(0,-50%);
+      flex-direction: column;
+      align-items: center;
+      .scrollit{
+        width: 1px;
+        height: 50px;
+        border:solid 1px #291608;
+      }
+      span{
+        -webkit-animation:scrolling 2s infinite
+      }
+      @-webkit-keyframes scrolling{
+        0%{
+          transform: translate(0px, 0px);
+        }
+        50%{
+          transform: translate(0px, 4px);
+        }
+        100%{
+          transform: translate(0px, 0px);
+        }
+      }
+    }
+  }
+  .img-box{
+    cursor: pointer;
+  }
   .class-ad{
     background-color: #F3E7DD;
     position: relative;
+    .h1{
+      letter-spacing: 0.125rem;
+    }
+    p{
+      font-size: 1.125rem;
+      letter-spacing: 0.05rem;
+    }
     &:before{
       content: '';
       display: block;
@@ -214,9 +267,14 @@ export default {
   }
   .coupon{
     background-image: url('../assets/images/coupon-banner.png');
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    .h1{
+      text-shadow: 1px 1px 2px #481f00;
+      letter-spacing: 0.125rem;
+    }
   }
   @media(max-width:545px){
     .class-ad{

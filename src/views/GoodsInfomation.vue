@@ -16,7 +16,7 @@
               <h3 class="text-toffee">NT$&nbsp;{{product.price}}</h3>
               <div class="mt-4 mb-4">
                 <label for="inputState" class="form-label">請選擇數量:</label>
-                <select id="inputState" class="form-select" v-model.number="product.qty" @click="addToCart(product)">
+                <select id="inputState" class="form-select" v-model.number="product.qty">
                   <option value="0" selected disabled>請選擇數量</option>
                   <option :value="qty" v-for="qty in 10" :key="qty">
                     {{qty}}
@@ -25,7 +25,7 @@
               </div>
               <div class="row justify-content-between">
                 <div class="col-lg-6 mb-3 mb-lg-0">
-                  <button class="btn btn-outline-toffee w-100" @click="addTofavorite(product.id)">
+                  <button class="btn btn-outline-toffee w-100" @click="toggleFavorite(product)">
                     <i class="bi bi-bookmark me-2"></i>加入收藏
                   </button>
                 </div>

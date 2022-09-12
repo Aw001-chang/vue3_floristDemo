@@ -14,8 +14,10 @@
                 <router-link to="/favorite" class="nav-link d-flex text-white pe-2 pe-sm-0">
                   <div class="position-relative me-2">
                     <i class="bi bi-bookmark me-1"></i>
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                    {{filterFavoriteLen.length}}
+                    <span
+                      v-if="favorite.length !== 0"
+                      class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                      {{favorite.length}}
                     </span>
                   </div>
                   <div class="d-sm-block d-none">我的收藏</div>
@@ -147,7 +149,6 @@ export default {
   },
   methods: {
     getData (len) {
-      console.log('len:', len)
       this.cartLength = len
     },
     deleteCart (item) {

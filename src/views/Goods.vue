@@ -74,7 +74,9 @@
                   <template v-if="category === ''">
                     <div class="col-sm-6 col-lg-4 mb-4" v-for="item in products" :key="item.id">
                       <div class="card h-100 position-relative">
-                        <div class="btn-sm rounded-scircle btn-toffee position-absolute top-0 end-0 m-2" @click="addTofavorite(item.id)">
+                        <div
+                          class="btn-sm rounded-scircle btn-toffee position-absolute top-0 end-0 m-2" @click="toggleFavorite(item)"
+                          :class="{ 'opacity-100': favorite.includes(item)}">
                           <i class="bi bi-bookmark text-white"></i>
                         </div>
                         <a class="img-box" @click="getProductId(item.id)">
@@ -91,7 +93,9 @@
                   <template  v-if="category !== ''">
                     <div class="col-sm-6 col-lg-4 mb-4" v-for="item in filterData" :key="item.id">
                       <div class="card h-100 position-relative">
-                        <div class="btn-sm rounded-scircle btn-toffee position-absolute top-0 end-0 m-2" @click="addTofavorite(item.id)">
+                        <div
+                          class="btn-sm rounded-scircle btn-toffee position-absolute top-0 end-0 m-2" @click="toggleFavorite(item)"
+                          :class="{ 'opacity-100': favorite.includes(item)}">
                           <i class="bi bi-bookmark text-white"></i>
                         </div>
                         <a class="img-box" @click="getProductId(item.id)">

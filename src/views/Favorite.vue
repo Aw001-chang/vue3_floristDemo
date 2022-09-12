@@ -5,15 +5,18 @@
       <div class="col-xl-10 mt-5">
         <div class="h1 text-brown mb-3 text-center text-sm-start">我的收藏</div>
         <div class="d-sm-flex justify-content-between align-items-center mb-5 text-center">
-          <span v-if="favorite.length !== 0">顯示所有&nbsp;{{filterFavoriteLen.length}}&nbsp;個結果</span>
+          <span v-if="favorite.length !== 0">顯示所有&nbsp;{{favorite.length}}&nbsp;個結果</span>
           <span v-else class="text-muted">目前尚無收藏品項</span>
         </div>
         <div class="tab-content" id="v-pills-tabContent">
           <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
             <div class="goods row">
-              <div class="col-sm-6 col-lg-3 mb-4" v-for="item in filterStorageFavorite" :key="item.id">
+              <div class="col-sm-6 col-lg-3 mb-4" v-for="item in favorite" :key="item.id">
                 <div class="card h-100 position-relative">
-                  <div class="btn-sm rounded-circle btn-toffee position-absolute top-0 end-0 m-2">
+                  <div
+                    class="btn-sm rounded-circle btn-toffee position-absolute top-0 end-0 m-2"
+                    @click="toggleFavorite(item)"
+                    :class="{ 'opacity-100': favorite.includes(item)}">
                     <i class="bi bi-bookmark text-white"></i>
                   </div>
                   <a class="img-box" @click="getProductId(item.id)">
