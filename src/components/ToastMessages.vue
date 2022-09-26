@@ -1,5 +1,5 @@
 <template>
-  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1050">
+  <div class="ToastTemplate">
     <Toast v-for="(msg, key) in messages" :key="key" :msg="msg"></Toast>
   </div>
 </template>
@@ -26,3 +26,13 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  .ToastTemplate{
+    position: fixed;
+    z-index: 1050;
+    top:100px;
+    left: 50%;
+    transform: translate(-50%,0);
+  }
+</style>

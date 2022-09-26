@@ -1,6 +1,6 @@
 <template>
   <Loading :active="isLoading"></Loading>
-  <div class="bg-brown position-fixed w-100">
+  <div class="bg-brown w-100">
     <div class="container-lg">
       <div class="row justify-content-center">
         <div class="col-lg-10">
