@@ -151,9 +151,15 @@
                     disableOnInteraction: false,
                   }"
                   :breakpoints="{
-                    '768': {
+                    '1200': {
                       slidesPerView: 4,
                       spaceBetween: 24,
+                    },
+                    '992': {
+                      slidesPerView: 3,
+                    },
+                    '768': {
+                      slidesPerView: 3,
                     },
                   }"
                   :modules="modules"

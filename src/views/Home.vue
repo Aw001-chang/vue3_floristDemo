@@ -5,32 +5,31 @@
         <div class="scrollit"></div>
         <span class="text-brown fw-bold">scroll</span>
       </div>
-      <img src="../assets/images/banner.jpg" class="w-100" alt="">
     </section>
     <section class="pt-7 pb-7">
       <div class="container">
         <div class="row justify-content-center">
           <div data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="bottom-bottom" class="col-lg-10">
             <div class="row">
-              <div class="col-md-3 col-sm-6 text-center text-maroon mb-4 mb-sm-5 mb-md-0">
+              <div class="col-md-3 col-sm-6 text-center text-maroon mb-5 mb-sm-5 mb-md-0">
                 <div class="fs-1 mb-sm-4 mb-2">
                   <i class="bi bi-geo-fill"></i>
                 </div>
                 <div class="h5 fw-normal">便捷的地點</div>
               </div>
-              <div class="col-md-3 col-sm-6 text-center text-maroon mb-4 mb-sm-5 mb-md-0">
+              <div class="col-md-3 col-sm-6 text-center text-maroon mb-5 mb-sm-5 mb-md-0">
                 <div class="fs-1 mb-sm-4 mb-2">
                   <i class="bi bi-emoji-smile"></i>
                 </div>
                 <div class="h5 fw-normal">專業師資熱情教學</div>
               </div>
-              <div class="col-md-3 col-sm-6 text-center text-maroon mb-4 mb-sm-5 mb-md-0">
+              <div class="col-md-3 col-sm-6 text-center text-maroon mb-5 mb-sm-5 mb-md-0">
                 <div class="fs-1 mb-sm-4 mb-2">
                   <i class="bi bi-droplet-half"></i>
                 </div>
                 <div class="h5 fw-normal">環保再生理念</div>
               </div>
-              <div class="col-md-3 col-sm-6 text-center text-maroon mb-4 mb-sm-5 mb-md-0">
+              <div class="col-md-3 col-sm-6 text-center text-maroon mb-5 mb-sm-5 mb-md-0">
                 <div class="fs-1 mb-sm-4 mb-2">
                   <i class="bi bi-hammer"></i>
                 </div>
@@ -41,7 +40,7 @@
         </div>
       </div>
     </section>
-    <section class="container-fluid class-ad pt-sm-5 pb-sm-5">
+    <section class="class-ad pt-sm-5 pb-sm-5">
       <div class="container">
         <div class="row justify-content-md-center">
           <div class="col-lg-10 text-center text-brown">
@@ -120,9 +119,15 @@
                 disableOnInteraction: false,
               }"
               :breakpoints="{
-                '768': {
+                '1200': {
                   slidesPerView: 4,
                   spaceBetween: 24,
+                },
+                '992': {
+                  slidesPerView: 3,
+                },
+                '768': {
+                  slidesPerView: 3,
                 },
               }"
               :modules="modules"
@@ -194,9 +199,12 @@ export default {
   }
   .banner{
     position: relative;
-    width: 100%;
     height: 680px;
     overflow: hidden;
+    background-image: url('../assets/images/banner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     .d-flex{
       z-index: 100;
       position: absolute;
