@@ -109,7 +109,7 @@
               <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav ms-auto mt-sm-0 mt-3">
                   <li class="nav-item">
-                    <router-link to="/goods" class="nav-link d-flex px-3 active">
+                    <router-link to="/goods" class="nav-link d-flex ps-3 active">
                       <div class="position-relative me-2">
                         <i class="bi bi-shop-window"></i>
                       </div>
