@@ -5,6 +5,7 @@ import { localize, setLocale } from '@vee-validate/i18n'
 import zhTW from '@vee-validate/i18n/dist/locale/zh_TW.json'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
+import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 import axios from 'axios'
@@ -27,7 +28,9 @@ configure({
 // 設定預設語系
 setLocale('zh_TW')
 
+const pinia = createPinia()
 const app = createApp(App)
+
 app.config.globalProperties.$filters = {
   currency,
   date
@@ -35,6 +38,7 @@ app.config.globalProperties.$filters = {
 app.config.globalProperties.$httpMessageState = $httpMessageState
 app.use(VueAxios, axios)
 app.use(router)
+app.use(pinia)
 app.use(Aos.init())
 // 註冊 vee-validate 三個全域元件
 app.component('Form', Form)

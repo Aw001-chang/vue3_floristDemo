@@ -174,7 +174,6 @@ export default {
     getProducts (page = 1) {
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/products?page=${page}`
       this.$http.get(api).then((res) => {
-        console.log('api:', api)
         this.products = res.data.products
         this.pagination = res.data.pagination
         this.searchSelected = null
@@ -184,7 +183,6 @@ export default {
       this.searchSelected = event.target.value
       if (this.category === '') {
         // this.allProducts
-        console.log('===')
         const hasPrice = this.products.filter((item) => {
           if (item.price !== '' && item.price !== undefined) {
             return item
@@ -202,7 +200,6 @@ export default {
           this.products = sortPriceB
         }
       } else if (this.category !== '') {
-        console.log('!==')
         // this.products
         const hasAllPrice = this.allProducts.filter((item) => {
           if (item.price !== '' && item.price !== undefined) {
