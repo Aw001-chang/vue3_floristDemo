@@ -183,7 +183,7 @@ export default {
     this.emitter.on('favorite', (item) => {
       this.favorite = item
     })
-    this.getCartProducts()
+    // this.getCartProducts()
   }
 }
 </script>

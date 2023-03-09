@@ -53,6 +53,7 @@ export default {
         this.emitter.emit('getNum', this.cartLength)
         this.emitter.emit('getFinalTotal', this.finalTotal)
         this.emitter.emit('getCarts', this.cart)
+        console.log(this.cart)
       })
     },
     // 至商品詳情頁
@@ -75,12 +76,12 @@ export default {
         this.emitter.emit('productInfo', this.product)
       })
     },
-    addToCart (item) {
+    addToCart (id) {
       this.isLoading = true
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_PATH}/cart`
       const cart = {
-        product_id: item.id,
-        qty: item.qty
+        product_id: id,
+        qty: 1
       }
       this.$http.post(api, { data: cart }).then((res) => {
         this.isLoading = false
@@ -139,6 +140,7 @@ export default {
     }
   },
   mounted () {
+    this.getCartProducts()
     this.emitter.on('deleteCartItem', (item) => {
       this.cart = item
     })

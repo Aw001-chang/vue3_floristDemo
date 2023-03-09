@@ -16,7 +16,7 @@
       <tbody>
         <tr v-for="item in orders" :key="item.id">
           <td>{{ $filters.date(item.create_at) }}</td>
-          <td>{{ item.user.email }}</td>
+          <td>{{ item.user }}</td>
           <td>
             <ul>
               <li v-for="product in item.products" :key="product.id">
@@ -146,6 +146,7 @@ export default {
   },
   created () {
     this.getOrders()
+    console.log('order', this.orders)
   }
 }
 </script>

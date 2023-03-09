@@ -82,7 +82,7 @@
                         <a class="img-box" @click="getProductId(item.id)">
                           <img :src="item.imageUrl" class="card-img-top" alt="...">
                         </a>
-                        <a @click="addToCart(item)" class="add-to-cart d-block text-white text-center pt-1 pb-1 btn-toffee"><i class="bi bi-cart3 me-2"></i>加入購物車</a>
+                        <a @click="addToCart(item.id)" class="add-to-cart d-block text-white text-center pt-1 pb-1 btn-toffee"><i class="bi bi-cart3 me-2"></i>加入購物車</a>
                         <div class="card-body text-line-height">
                           <div class="h5 text-brown text-2-line">{{item.title}}</div>
                           <span class="text-maroon position-absolute bottom-0 pb-3">NT$&nbsp;{{item.price}}</span>
@@ -101,7 +101,7 @@
                         <a class="img-box" @click="getProductId(item.id)">
                           <img :src="item.imageUrl" class="card-img-top" alt="...">
                         </a>
-                        <a @click="addToCart(item)" class="add-to-cart d-block text-white text-center pt-1 pb-1 btn-toffee">
+                        <a @click="addToCart(item.id)" class="add-to-cart d-block text-white text-center pt-1 pb-1 btn-toffee">
                           <i class="bi bi-cart3 me-2"></i>加入購物車
                         </a>
                         <div class="card-body text-line-height">

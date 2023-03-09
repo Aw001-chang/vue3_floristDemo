@@ -152,7 +152,6 @@ export default {
       this.isLoading = true
       this.$http.post(api).then((res) => {
         this.isLoading = false
-        console.log('zz', res)
         if (res.data.success) {
           this.getOders()
         }
